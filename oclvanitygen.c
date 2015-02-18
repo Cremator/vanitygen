@@ -60,6 +60,7 @@ usage(const char *name)
 "-L            Generate litecoin address\n"
 "-N            Generate namecoin address\n"
 "-T            Generate bitcoin testnet address\n"
+"-x            Generate darkcoin address\n"
 "-X <version>  Generate address with the given version\n"
 "-F <format>   Generate address with the given format (pubkey, compressed)\n"
 "-e            Encrypt private keys, prompt for password\n"
@@ -127,7 +128,7 @@ main(int argc, char **argv)
 	int i;
 
 	while ((opt = getopt(argc, argv,
-			     "vqik1LNTX:F:eE:p:P:d:w:t:g:b:VSh?f:o:s:D:")) != -1) {
+			     "vqik1LxNTX:F:eE:p:P:d:w:t:g:b:VSh?f:o:s:D:")) != -1) {
 		switch (opt) {
 		case 'v':
 			verbose = 2;
@@ -155,6 +156,10 @@ main(int argc, char **argv)
 		case 'T':
 			addrtype = 111;
 			privtype = 239;
+			break;
+		case 'x':
+			addrtype = 76;
+			privtype = 204;
 			break;
 		case 'X':
 			addrtype = atoi(optarg);
