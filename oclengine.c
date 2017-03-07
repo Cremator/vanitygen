@@ -452,7 +452,7 @@ vg_ocl_get_quirks(vg_ocl_context_t *vocp)
 
 			dvn = vg_ocl_device_getstr(vocp->voc_ocldid,
 						   CL_DEVICE_NAME);
-			if (!strcmp(dvn, "Hawaii") || !strcmp(dvn, "Pitcairn"))
+			if (!strcmp(dvn, "Hawaii") || !strcmp(dvn, "Pitcairn") || !strcmp(dvn, "Fiji"))
 				quirks &= ~VG_OCL_AMD_BFI_INT; 
 			if (!strcmp(dvn, "ATI RV710")) {
 				quirks &= ~VG_OCL_OPTIMIZATIONS;
